@@ -5,9 +5,7 @@ import (
 )
 
 func TestCalculatoStr(t *testing.T) {
-	result, err := CalculatoStr("1+1")
-	if err != nil {
-		t.Fatal(err)
-	}
+	result := CalculatoStr("1+1")
+
 	t.Log(result)
 }

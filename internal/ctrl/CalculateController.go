@@ -2,23 +2,15 @@ package ctrl
 
 import (
 	"SecondProject/internal/handler"
+	"SecondProject/internal/model"
 	"github.com/gin-gonic/gin"
 )
 
 func Calculator(ctx *gin.Context) {
 	calculatoStr, _ := ctx.GetPostForm("calculatoStr")
-	result, err := handler.CalculatoStr(calculatoStr)
-	if err != nil {
-		ctx.JSON(200, map[string]interface{}{
-			"code":    201,
-			"message": "ERROR",
-			"data":    err.Error(),
-		})
-	} else {
-		ctx.JSON(200, map[string]interface{}{
-			"code":    200,
-			"message": "OK",
-			"data":    result,
-		})
+	if calculatoStr == "" {
+		ctx.JSON(200, model.Result{Code: "204", Msg: "请输入表达式", Data: nil})
 	}
+	result := handler.CalculatoStr(calculatoStr)
+	ctx.JSON(200, result)
 }

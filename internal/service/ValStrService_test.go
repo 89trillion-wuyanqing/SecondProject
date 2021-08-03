@@ -3,9 +3,12 @@ package service
 import "testing"
 
 func TestValStrService(t *testing.T) {
-	result, err := ValStrService("333+2")
-	if err != nil {
-		t.Fatal(err)
-	}
+	result := ValStrService("333+2")
+
+	t.Log(result)
+}
+
+func TestCalculate(t *testing.T) {
+	result := Calculate("333+2")
 	t.Log(result)
 }
