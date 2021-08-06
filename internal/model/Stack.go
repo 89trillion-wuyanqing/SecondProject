@@ -75,3 +75,18 @@ func (this *Stack) Priority(oper int) int {
 	}
 	return res
 }
+
+/*func (this *Stack) UnStack() *Stack {
+	unstack := &Stack{
+		Top:    -1,
+	}
+	for {
+		if this.Top == -1 {
+			break // 退出条件
+		}
+		num, _ := this.Pop()
+		unstack.Push(num)
+	}
+	return unstack
+}
+*/
