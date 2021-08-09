@@ -9,21 +9,29 @@
 │   ├── http
 │   │   └── httpServer.go
 │   └── main.go
+├── config
+│   └── app.ini
 ├── go.mod
 ├── go.sum
-└── internal
-    ├── ctrl
-    │   └── CalculateController.go
-    ├── handler
-    │   ├── CalculatoHandler.go
-    │   └── CalculatoHandler_test.go
-    ├── model
-    │   └── Stack.go
-    ├── router
-    │   └── CalculatoRouter.go
-    └── service
-        ├── ValStrService.go
-        └── ValStrService_test.go
+├── internal
+│   ├── ctrl
+│   │   └── CalculateController.go
+│   ├── handler
+│   │   ├── CalculatoHandler.go
+│   │   └── CalculatoHandler_test.go
+│   ├── model
+│   │   ├── Result.go
+│   │   └── Stack.go
+│   ├── router
+│   │   └── CalculatoRouter.go
+│   ├── service
+│   │   └── ValStrService.go
+│   └── utils
+│       └── IniUtils.go
+├── locust
+│   ├── LocustFile.py
+│   └── report_1627634419.714995.html
+└── readme.md
 ```
 
 
@@ -38,6 +46,8 @@
 | handler层 | /internal/handler       | 处理具体业务逻辑                     | 调用模型层，被控制层调用  | 不可同层相互调用 |
 | 模型层    | /internal/model         | 数据模型                             | 被业务逻辑层调用          | 不可同层相互调用 |
 | service层 | /internal/service       | 通用业务逻辑                         | 被handler调用             | 不可同层相互调用 |
+| utils层   | /internal/utils         | 工具层                               | 被各层调用                | 不可同层相互调用 |
+| config    | /config                 | 存放配置文件和日志文件               |                           |                  |
 
 ## 4.存储设计
 
@@ -149,9 +159,6 @@ POST
 
 ## 流程图
 
-[https://drive.google.com/drive/folders/1lRvdhqMMFNIiI-j0PUwtsjA0vgzSbMbX](https://drive.google.com/drive/folders/1lRvdhqMMFNIiI-j0PUwtsjA0vgzSbMbX)
 
 
-
-
-
+![第二题](第二题.png)
