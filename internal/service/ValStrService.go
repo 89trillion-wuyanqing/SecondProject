@@ -145,17 +145,6 @@ func Calculate(exp string) model.Result {
 		index++
 	}
 
-	/*if operStack.Arr[operStack.Top] ==42 || operStack.Arr[operStack.Top] ==47{
-		num1, _ = numStack.Pop()
-		num2, _ = numStack.Pop()
-		oper, _ = operStack.Pop()
-		result = operStack.Cal(num1, num2, oper)
-		// 将计算结果重新入数栈
-		numStack.Push(result)
-	}
-	unNumStack :=numStack.UnStack()
-	unOperStack := operStack.UnStack()*/
-
 	// 如果扫描表达式完毕，依次从符号栈取出符号，然后从数栈取出两个数。运算后的结果入数栈，直到符号栈为空。
 	for {
 		if operStack.Top == -1 {

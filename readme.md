@@ -7,28 +7,27 @@
 ```
 ├── app
 │   ├── http
-│   │   └── httpServer.go
-│   └── main.go
-├── config
+│   │   └── httpServer.go #http服务
+│   └── main.go #程序入口
+├── config #配文件
 │   └── app.ini
 ├── go.mod
-├── go.sum
 ├── internal
-│   ├── ctrl
+│   ├── ctrl #控制器层
 │   │   └── CalculateController.go
-│   ├── handler
+│   ├── handler #handler层
 │   │   ├── CalculatoHandler.go
 │   │   └── CalculatoHandler_test.go
-│   ├── model
+│   ├── model #模型层
 │   │   ├── Result.go
 │   │   └── Stack.go
-│   ├── router
+│   ├── router #路由层
 │   │   └── CalculatoRouter.go
-│   ├── service
+│   ├── service #service层
 │   │   └── ValStrService.go
-│   └── utils
+│   └── utils #工具层
 │       └── IniUtils.go
-├── locust
+├── locust #压力测试
 │   ├── LocustFile.py
 │   └── report_1627634419.714995.html
 └── readme.md
