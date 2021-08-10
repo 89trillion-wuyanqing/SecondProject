@@ -79,7 +79,7 @@
 
 POST
 
-127.0.0.1:8000/calculator
+localhost:8000/calculator
 
 #### 请求参数
 
